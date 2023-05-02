@@ -15,7 +15,7 @@ movie_titles.head()
 df = pd.merge(df,movie_titles,on='item_id')
 df.head()
 sns.set_style('white')
-matplotlib inline
+
 df.groupby('title')['rating'].mean().sort_values(ascending=False).head()
 df.groupby('title')['rating'].count().sort_values(ascending=False).head()
 ratings = pd.DataFrame(df.groupby('title')['rating'].mean())
