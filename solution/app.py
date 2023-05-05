@@ -11,7 +11,7 @@ st.set_page_config(page_title='Movie Recommendation System',page_icon="memo",lay
 st.title('Movie Recommendation System')
 
 
-#st.sidebar.image('img.png')
+st.sidebar.image('/app/movie_recommendation/solution/img.png')
 
 def get_recommendation(movie):
     df = pd.read_csv('/app/movie_recommendation/solution/movie_dataset.csv')
@@ -34,7 +34,7 @@ def get_recommendation(movie):
     recommended_movies_df = recommended_movies.iloc[1:11,:]
     return recommended_movies_df
 
-df = pd.read_csv('movie_dataset.csv')
+df = pd.read_csv('/app/movie_recommendation/solution/movie_dataset.csv')
 movies_list = list(df['title'].unique())
 movie_title = st.sidebar.selectbox('Select a movie:', movies_list)
 
