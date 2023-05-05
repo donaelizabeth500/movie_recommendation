@@ -14,7 +14,7 @@ st.title('Movie Recommendation System')
 #st.sidebar.image('img.png')
 
 def get_recommendation(movie):
-    df = pd.read_csv('movie_dataset.csv')
+    df = pd.read_csv('./movie_dataset.csv')
 
     ratings = pd.DataFrame(df.groupby('title')['rating'].mean())
     ratings['num of ratings'] = pd.DataFrame(df.groupby('title')['rating'].count())
