@@ -7,7 +7,6 @@ import pandas as pd
 import streamlit as st
 
 
-
 st.set_page_config(page_title='Movie Recommendation System',page_icon="memo",layout="wide")
 st.title('Movie Recommendation System')
 
