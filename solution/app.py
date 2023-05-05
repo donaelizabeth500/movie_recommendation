@@ -11,7 +11,7 @@ st.set_page_config(page_title='Movie Recommendation System',page_icon="memo",lay
 st.title('Movie Recommendation System')
 
 
-st.sidebar.image('img.png')
+#st.sidebar.image('img.png')
 
 def get_recommendation(movie):
     df = pd.read_csv('movie_dataset.csv')
@@ -62,7 +62,7 @@ if st.sidebar.button('Get Recommendations'):
     sns.barplot(x='predicted_rating', y=top_n_movies.index, data=top_n_movies, palette='Oranges_d')
     ax2.set_xlabel('Predicted Rating')
     ax2.set_ylabel('Movie Title')
-    ax2.set_title('Top 10 Recommended Movies for User')
+    ax2.set_title('Top 10 Recommended Moviepivots for User')
     st.pyplot(fig2)
     
     # Plot a histogram of the ratings distribution for the recommended movies
