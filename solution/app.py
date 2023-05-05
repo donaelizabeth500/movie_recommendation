@@ -7,15 +7,14 @@ import pandas as pd
 import streamlit as st
 
 
-
 st.set_page_config(page_title='Movie Recommendation System',page_icon="memo",layout="wide")
 st.title('Movie Recommendation System')
 
 
-st.sidebar.image('img.png')
+st.sidebar.image('/app/movie_recommendation/solution/img.png')
 
 def get_recommendation(movie):
-    df = pd.read_csv('movie_dataset.csv')
+    df = pd.read_csv('/app/movie_recommendation/solution/movie_dataset.csv')
 
     ratings = pd.DataFrame(df.groupby('title')['rating'].mean())
     ratings['num of ratings'] = pd.DataFrame(df.groupby('title')['rating'].count())
@@ -35,7 +34,7 @@ def get_recommendation(movie):
     recommended_movies_df = recommended_movies.iloc[1:11,:]
     return recommended_movies_df
 
-df = pd.read_csv('movie_dataset.csv')
+df = pd.read_csv('/app/movie_recommendation/solution/movie_dataset.csv')
 movies_list = list(df['title'].unique())
 movie_title = st.sidebar.selectbox('Select a movie:', movies_list)
 
@@ -63,7 +62,7 @@ if st.sidebar.button('Get Recommendations'):
     sns.barplot(x='predicted_rating', y=top_n_movies.index, data=top_n_movies, palette='Oranges_d')
     ax2.set_xlabel('Predicted Rating')
     ax2.set_ylabel('Movie Title')
-    ax2.set_title('Top 10 Recommended Movies for User')
+    ax2.set_title('Top 10 Recommended Moviepivots for User')
     st.pyplot(fig2)
     
     # Plot a histogram of the ratings distribution for the recommended movies
